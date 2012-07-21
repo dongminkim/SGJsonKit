@@ -2,10 +2,10 @@ SGJsonKit
 =========
 
 * Purpose
-Auto-mapping a json object to an Objective-C class
+ * Auto-mapping a json object to an Objective-C class
 
 * Requirements
-iOS 5+ (ARC, NSJSONSerialization)
+ * iOS 5+ (ARC, NSJSONSerialization)
 
 * License
-MIT License
+ * MIT License
