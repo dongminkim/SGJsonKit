@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2486566515BB2CE400F575E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2486566415BB2CE400F575E4 /* Foundation.framework */; };
+		2486567315BB2CE400F575E4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2486567215BB2CE400F575E4 /* SenTestingKit.framework */; };
+		2486567615BB2CE400F575E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2486566415BB2CE400F575E4 /* Foundation.framework */; };
+		2486567915BB2CE400F575E4 /* libSGJsonKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2486566115BB2CE400F575E4 /* libSGJsonKit.a */; };
+		2486567F15BB2CE400F575E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2486567D15BB2CE400F575E4 /* InfoPlist.strings */; };
+		2486568215BB2CE400F575E4 /* SGJsonKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2486568115BB2CE400F575E4 /* SGJsonKitTests.m */; };
+		2486569515BB2D7A00F575E4 /* SGJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 2486568E15BB2D7A00F575E4 /* SGJson.h */; };
+		2486569615BB2D7A00F575E4 /* SGJsonArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 2486568F15BB2D7A00F575E4 /* SGJsonArray.h */; };
+		2486569715BB2D7A00F575E4 /* SGJsonArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2486569015BB2D7A00F575E4 /* SGJsonArray.m */; };
+		2486569815BB2D7A00F575E4 /* SGJsonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2486569115BB2D7A00F575E4 /* SGJsonKit.h */; };
+		2486569A15BB2D7A00F575E4 /* SGJsonObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2486569315BB2D7A00F575E4 /* SGJsonObject.h */; };
+		2486569B15BB2D7A00F575E4 /* SGJsonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2486569415BB2D7A00F575E4 /* SGJsonObject.m */; };
+		248656BC15BB301200F575E4 /* SGDemoMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 248656B715BB301200F575E4 /* SGDemoMember.m */; };
+		248656BD15BB301200F575E4 /* SGDemoMembers.m in Sources */ = {isa = PBXBuildFile; fileRef = 248656B915BB301200F575E4 /* SGDemoMembers.m */; };
+		248656BE15BB301200F575E4 /* SGDemoRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 248656BB15BB301200F575E4 /* SGDemoRoot.m */; };
+		248656C115BB327F00F575E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248656C015BB327F00F575E4 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2486567715BB2CE400F575E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2486565815BB2CE400F575E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2486566015BB2CE400F575E4;
+			remoteInfo = SGJsonKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2486566115BB2CE400F575E4 /* libSGJsonKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSGJsonKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2486566415BB2CE400F575E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2486566815BB2CE400F575E4 /* SGJsonKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SGJsonKit-Prefix.pch"; sourceTree = "<group>"; };
+		2486567115BB2CE400F575E4 /* SGJsonKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGJsonKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2486567215BB2CE400F575E4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2486567C15BB2CE400F575E4 /* SGJsonKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SGJsonKitTests-Info.plist"; sourceTree = "<group>"; };
+		2486567E15BB2CE400F575E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2486568015BB2CE400F575E4 /* SGJsonKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGJsonKitTests.h; sourceTree = "<group>"; };
+		2486568115BB2CE400F575E4 /* SGJsonKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGJsonKitTests.m; sourceTree = "<group>"; };
+		2486568E15BB2D7A00F575E4 /* SGJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGJson.h; sourceTree = "<group>"; };
+		2486568F15BB2D7A00F575E4 /* SGJsonArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGJsonArray.h; sourceTree = "<group>"; };
+		2486569015BB2D7A00F575E4 /* SGJsonArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGJsonArray.m; sourceTree = "<group>"; };
+		2486569115BB2D7A00F575E4 /* SGJsonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGJsonKit.h; sourceTree = "<group>"; };
+		2486569315BB2D7A00F575E4 /* SGJsonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGJsonObject.h; sourceTree = "<group>"; };
+		2486569415BB2D7A00F575E4 /* SGJsonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGJsonObject.m; sourceTree = "<group>"; };
+		248656B615BB301200F575E4 /* SGDemoMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDemoMember.h; sourceTree = "<group>"; };
+		248656B715BB301200F575E4 /* SGDemoMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDemoMember.m; sourceTree = "<group>"; };
+		248656B815BB301200F575E4 /* SGDemoMembers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDemoMembers.h; sourceTree = "<group>"; };
+		248656B915BB301200F575E4 /* SGDemoMembers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDemoMembers.m; sourceTree = "<group>"; };
+		248656BA15BB301200F575E4 /* SGDemoRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDemoRoot.h; sourceTree = "<group>"; };
+		248656BB15BB301200F575E4 /* SGDemoRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDemoRoot.m; sourceTree = "<group>"; };
+		248656C015BB327F00F575E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2486565E15BB2CE400F575E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2486566515BB2CE400F575E4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2486566D15BB2CE400F575E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				248656C115BB327F00F575E4 /* UIKit.framework in Frameworks */,
+				2486567315BB2CE400F575E4 /* SenTestingKit.framework in Frameworks */,
+				2486567615BB2CE400F575E4 /* Foundation.framework in Frameworks */,
+				2486567915BB2CE400F575E4 /* libSGJsonKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2486565615BB2CE400F575E4 = {
+			isa = PBXGroup;
+			children = (
+				2486566615BB2CE400F575E4 /* SGJsonKit */,
+				2486567A15BB2CE400F575E4 /* SGJsonKitTests */,
+				2486566315BB2CE400F575E4 /* Frameworks */,
+				2486566215BB2CE400F575E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2486566215BB2CE400F575E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2486566115BB2CE400F575E4 /* libSGJsonKit.a */,
+				2486567115BB2CE400F575E4 /* SGJsonKitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2486566315BB2CE400F575E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2486566415BB2CE400F575E4 /* Foundation.framework */,
+				2486567215BB2CE400F575E4 /* SenTestingKit.framework */,
+				248656C015BB327F00F575E4 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2486566615BB2CE400F575E4 /* SGJsonKit */ = {
+			isa = PBXGroup;
+			children = (
+				2486569115BB2D7A00F575E4 /* SGJsonKit.h */,
+				2486568E15BB2D7A00F575E4 /* SGJson.h */,
+				2486568F15BB2D7A00F575E4 /* SGJsonArray.h */,
+				2486569015BB2D7A00F575E4 /* SGJsonArray.m */,
+				2486569315BB2D7A00F575E4 /* SGJsonObject.h */,
+				2486569415BB2D7A00F575E4 /* SGJsonObject.m */,
+				2486566715BB2CE400F575E4 /* Supporting Files */,
+			);
+			path = SGJsonKit;
+			sourceTree = "<group>";
+		};
+		2486566715BB2CE400F575E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2486566815BB2CE400F575E4 /* SGJsonKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2486567A15BB2CE400F575E4 /* SGJsonKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				248656B515BB301200F575E4 /* SGDemoObjects */,
+				2486568015BB2CE400F575E4 /* SGJsonKitTests.h */,
+				2486568115BB2CE400F575E4 /* SGJsonKitTests.m */,
+				2486567B15BB2CE400F575E4 /* Supporting Files */,
+			);
+			path = SGJsonKitTests;
+			sourceTree = "<group>";
+		};
+		2486567B15BB2CE400F575E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2486567C15BB2CE400F575E4 /* SGJsonKitTests-Info.plist */,
+				2486567D15BB2CE400F575E4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		248656B515BB301200F575E4 /* SGDemoObjects */ = {
+			isa = PBXGroup;
+			children = (
+				248656B615BB301200F575E4 /* SGDemoMember.h */,
+				248656B715BB301200F575E4 /* SGDemoMember.m */,
+				248656B815BB301200F575E4 /* SGDemoMembers.h */,
+				248656B915BB301200F575E4 /* SGDemoMembers.m */,
+				248656BA15BB301200F575E4 /* SGDemoRoot.h */,
+				248656BB15BB301200F575E4 /* SGDemoRoot.m */,
+			);
+			path = SGDemoObjects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2486565F15BB2CE400F575E4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2486569515BB2D7A00F575E4 /* SGJson.h in Headers */,
+				2486569615BB2D7A00F575E4 /* SGJsonArray.h in Headers */,
+				2486569815BB2D7A00F575E4 /* SGJsonKit.h in Headers */,
+				2486569A15BB2D7A00F575E4 /* SGJsonObject.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2486566015BB2CE400F575E4 /* SGJsonKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2486568515BB2CE400F575E4 /* Build configuration list for PBXNativeTarget "SGJsonKit" */;
+			buildPhases = (
+				2486565D15BB2CE400F575E4 /* Sources */,
+				2486565E15BB2CE400F575E4 /* Frameworks */,
+				2486565F15BB2CE400F575E4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SGJsonKit;
+			productName = SGJsonKit;
+			productReference = 2486566115BB2CE400F575E4 /* libSGJsonKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2486567015BB2CE400F575E4 /* SGJsonKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2486568815BB2CE400F575E4 /* Build configuration list for PBXNativeTarget "SGJsonKitTests" */;
+			buildPhases = (
+				2486566C15BB2CE400F575E4 /* Sources */,
+				2486566D15BB2CE400F575E4 /* Frameworks */,
+				2486566E15BB2CE400F575E4 /* Resources */,
+				2486566F15BB2CE400F575E4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2486567815BB2CE400F575E4 /* PBXTargetDependency */,
+			);
+			name = SGJsonKitTests;
+			productName = SGJsonKitTests;
+			productReference = 2486567115BB2CE400F575E4 /* SGJsonKitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2486565815BB2CE400F575E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = TheVanity.org;
+			};
+			buildConfigurationList = 2486565B15BB2CE400F575E4 /* Build configuration list for PBXProject "SGJsonKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2486565615BB2CE400F575E4;
+			productRefGroup = 2486566215BB2CE400F575E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2486566015BB2CE400F575E4 /* SGJsonKit */,
+				2486567015BB2CE400F575E4 /* SGJsonKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2486566E15BB2CE400F575E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2486567F15BB2CE400F575E4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2486566F15BB2CE400F575E4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2486565D15BB2CE400F575E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2486569715BB2D7A00F575E4 /* SGJsonArray.m in Sources */,
+				2486569B15BB2D7A00F575E4 /* SGJsonObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2486566C15BB2CE400F575E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2486568215BB2CE400F575E4 /* SGJsonKitTests.m in Sources */,
+				248656BC15BB301200F575E4 /* SGDemoMember.m in Sources */,
+				248656BD15BB301200F575E4 /* SGDemoMembers.m in Sources */,
+				248656BE15BB301200F575E4 /* SGDemoRoot.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2486567815BB2CE400F575E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2486566015BB2CE400F575E4 /* SGJsonKit */;
+			targetProxy = 2486567715BB2CE400F575E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2486567D15BB2CE400F575E4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2486567E15BB2CE400F575E4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2486568315BB2CE400F575E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2486568415BB2CE400F575E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2486568615BB2CE400F575E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SGJsonKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SGJsonKit/SGJsonKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2486568715BB2CE400F575E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SGJsonKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SGJsonKit/SGJsonKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2486568915BB2CE400F575E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SGJsonKit/SGJsonKit-Prefix.pch";
+				INFOPLIST_FILE = "SGJsonKitTests/SGJsonKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2486568A15BB2CE400F575E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SGJsonKit/SGJsonKit-Prefix.pch";
+				INFOPLIST_FILE = "SGJsonKitTests/SGJsonKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2486565B15BB2CE400F575E4 /* Build configuration list for PBXProject "SGJsonKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2486568315BB2CE400F575E4 /* Debug */,
+				2486568415BB2CE400F575E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2486568515BB2CE400F575E4 /* Build configuration list for PBXNativeTarget "SGJsonKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2486568615BB2CE400F575E4 /* Debug */,
+				2486568715BB2CE400F575E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2486568815BB2CE400F575E4 /* Build configuration list for PBXNativeTarget "SGJsonKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2486568915BB2CE400F575E4 /* Debug */,
+				2486568A15BB2CE400F575E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2486565815BB2CE400F575E4 /* Project object */;
+}
