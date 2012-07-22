@@ -27,5 +27,11 @@
 #import "SGJsonObject.h"
 
 @interface SGJsonArray : SGJsonObject
+
 + (Class)classForArrayItem;
+
+- (NSUInteger)count;
+- (id)objectAtIndex:(NSUInteger)index;
+- (void)addObject:(id)anObject;
+
 @end

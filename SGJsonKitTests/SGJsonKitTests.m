@@ -31,13 +31,16 @@
 {
     NSString *jsonTextString = @"{\"version\":\"1.0.0\",\"desc\":null,\"members\":[{\"no\":101,\"name\":\"Dongmin Kim\"}, {\"no\":102,\"name\":\"Hyo Park\"}]}";
     SGDemoRoot *demo = [[SGDemoRoot alloc] initWithJSONTextString:jsonTextString];
-    NSLog(@"demo: %@", demo);
+    NSLog(@"demo 0: %@", demo);
     
     NSString *generatedJsonTextString = [demo JSONTextString];
     NSLog(@"generated json text: %@", generatedJsonTextString);
     
     demo = [[SGDemoRoot alloc] initWithJSONTextString:generatedJsonTextString];
-    NSLog(@"demo: %@", demo);
+    NSLog(@"demo 1: %@", demo);
+    
+    [demo.members addObject:[[SGDemoMember alloc] initWithJSONTextString:@"{\"no\":103,\"name\":\"Susie Shin\"}"]];
+    NSLog(@"demo 2: %@", demo);
 
     STAssertTrue([demo.version isKindOfClass:[NSString class]], @"#1");
     STAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#2");
@@ -47,6 +50,8 @@
     STAssertTrue([[[(NSArray*)demo.members objectAtIndex:0] name] isEqualToString:@"Dongmin Kim"], @"#6");
     STAssertTrue([[[(NSArray*)demo.members objectAtIndex:1] no] isEqualToNumber:[NSNumber numberWithInt:102]], @"#7");
     STAssertTrue([[[(NSArray*)demo.members objectAtIndex:1] name] isEqualToString:@"Hyo Park"], @"#8");
+    STAssertTrue([[[(NSArray*)demo.members objectAtIndex:2] no] isEqualToNumber:[NSNumber numberWithInt:103]], @"#9");
+    STAssertTrue([[[(NSArray*)demo.members objectAtIndex:2] name] isEqualToString:@"Susie Shin"], @"#10");
 }
 
 @end

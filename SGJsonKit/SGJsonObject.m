@@ -84,12 +84,18 @@ SEL property_getSetter(objc_property_t property)
 
 @implementation SGJsonObject
 
+- (id)init
+{
+    self = [super init];
+    return self;
+}
+
 - (id)initWithJSONObject:(id)jsonObject
 {
     NSDictionary *dic = (NSDictionary*)jsonObject;
     if (dic == nil) {
         [NSException raise:NSInternalInconsistencyException
-                    format:@"%@ initWithJSONObject: NOT with NSDictionary.", self];
+                    format:@"%@ initWithJSONObject: param is %@ NOT %@.", self, [jsonObject class], [NSDictionary class]];
     }
 
     self = [super init];

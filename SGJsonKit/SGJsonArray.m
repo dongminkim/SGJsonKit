@@ -26,19 +26,34 @@
 #import "SGJsonKit.h"
 
 @interface SGJsonArray ()
-@property (nonatomic, strong) NSArray *array;
+@property (nonatomic, strong) NSMutableArray *array;
 @end
 
 
 @implementation SGJsonArray
 @synthesize array=array_;
 
++ (Class)classForArrayItem
+{
+    NSAssert(NO, @"This is an abstract method that should be overridden in a subclass.");
+    return nil;
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self != nil) {
+        self.array = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (id)initWithJSONObject:(id)jsonObject
 {
     NSArray *arr = (NSArray*)jsonObject;
     if (arr == nil) {
         [NSException raise:NSInternalInconsistencyException
-                    format:@"%@ initWithJSONObject: NOT with NSArray.", self];
+                    format:@"%@ addObject: param is %@ NOT %@.", self, [jsonObject class], [NSArray class]];
     }
     
     self = [super init];
@@ -85,13 +100,8 @@
     return propertyDescriptions;
 }
 
-+ (Class)classForArrayItem
-{
-    NSAssert(NO, @"This is an abstract method that should be overridden in a subclass.");
-    return nil;
-}
 
-#pragma mark -
+#pragma mark - NSCopying
 - (id)copyWithZone:(NSZone *)zone
 {
     SGJsonArray *copy = [[[self class] allocWithZone:zone] init];
@@ -99,6 +109,8 @@
     return copy;
 }
 
+
+#pragma mark - NSArray
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
     return self.array;
@@ -107,6 +119,26 @@
 - (BOOL)isKindOfClass:(Class)aClass
 {
     return [self.array isKindOfClass:aClass];
+}
+
+- (NSUInteger)count
+{
+    return [self.array count];
+}
+
+- (id)objectAtIndex:(NSUInteger)index
+{
+    return [self.array objectAtIndex:index];
+}
+
+- (void)addObject:(id)anObject
+{
+    Class itemClass = [[self class] classForArrayItem];
+    if (![anObject isKindOfClass:itemClass]) {
+        [NSException raise:NSInternalInconsistencyException
+                    format:@"%@ addObject: param is %@ NOT %@.", self, [anObject class], itemClass];
+    }
+    [self.array addObject:anObject];
 }
 
 @end
