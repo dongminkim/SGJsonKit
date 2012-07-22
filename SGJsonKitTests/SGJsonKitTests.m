@@ -32,6 +32,13 @@
     NSString *jsonTextString = @"{\"version\":\"1.0.0\",\"desc\":null,\"members\":[{\"no\":101,\"name\":\"Dongmin Kim\"}, {\"no\":102,\"name\":\"Hyo Park\"}]}";
     SGDemoRoot *demo = [[SGDemoRoot alloc] initWithJSONTextString:jsonTextString];
     NSLog(@"demo: %@", demo);
+    
+    NSString *generatedJsonTextString = [demo JSONTextString];
+    NSLog(@"generated json text: %@", generatedJsonTextString);
+    
+    demo = [[SGDemoRoot alloc] initWithJSONTextString:generatedJsonTextString];
+    NSLog(@"demo: %@", demo);
+
     STAssertTrue([demo.version isKindOfClass:[NSString class]], @"#1");
     STAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#2");
     STAssertTrue([demo.title isKindOfClass:[NSNull class]], @"#3");

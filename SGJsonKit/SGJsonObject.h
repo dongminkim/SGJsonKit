@@ -26,7 +26,7 @@
 #import <Foundation/Foundation.h>
 #import "SGJson.h"
 
-@interface SGJsonObject : NSObject <SGJson>
+@interface SGJsonObject : NSObject <SGJson, NSCopying>
 
 - (NSArray*)copyPropertyNames;
 - (Class)classForPropertyNamed:(NSString*)name;

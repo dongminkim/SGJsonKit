@@ -28,4 +28,7 @@
 - (id)initWithJSONObject:(id)jsonObject;
 - (id)initWithJSONTextData:(NSData*)jsonTextData;
 - (id)initWithJSONTextString:(NSString*)jsonTextString;
+- (id)JSONObject;
+- (NSData*)JSONTextData;
+- (NSString*)JSONTextString;
 @end

@@ -61,6 +61,30 @@
     return self;
 }
 
+- (id)JSONObject
+{
+    NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:[self.array count]];
+    for (id value_ in self.array) {
+        id value = value_;
+        if ([value conformsToProtocol:@protocol(SGJson)]) {
+            value = [value JSONObject];
+        }
+        [arr addObject:value];
+    }
+    return arr;
+}
+
+- (NSString *)description
+{
+    NSMutableString *propertyDescriptions = [[NSMutableString alloc] initWithFormat:@"%@[\n", [self class]];
+    for (id value_ in self.array) {
+        id value = value_;
+        [propertyDescriptions appendFormat:@"\t%@,\n", value];
+    }
+    [propertyDescriptions appendFormat:@"]"];
+    return propertyDescriptions;
+}
+
 + (Class)classForArrayItem
 {
     NSAssert(NO, @"This is an abstract method that should be overridden in a subclass.");
@@ -68,6 +92,13 @@
 }
 
 #pragma mark -
+- (id)copyWithZone:(NSZone *)zone
+{
+    SGJsonArray *copy = [[[self class] allocWithZone:zone] init];
+    copy.array = self.array;
+    return copy;
+}
+
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
     return self.array;

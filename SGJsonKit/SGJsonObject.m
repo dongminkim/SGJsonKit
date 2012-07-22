@@ -132,6 +132,42 @@ SEL property_getSetter(objc_property_t property)
     return [self initWithJSONTextData:data];
 }
 
+- (id)JSONObject
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    NSArray *propertyNames = [self copyPropertyNames];
+    for (NSString *propertyName in propertyNames)
+    {
+        SEL getter = [self getterForPropertyNamed:propertyName];
+        if (getter == nil) {
+            [NSException raise:NSInternalInconsistencyException
+                        format:@"%@ has property '%@' with no getter.", self, propertyName];
+        }
+        
+        id value = [self performSelector:getter];
+        if ([value conformsToProtocol:@protocol(SGJson)]) {
+            value = [value JSONObject];
+        }
+        [dic setObject:value forKey:propertyName];
+    }
+    return dic;
+}
+
+- (NSData*)JSONTextData
+{
+    id jsonObject = [self JSONObject];
+    NSError *error = nil;
+    NSData *jsonTextData = [NSJSONSerialization dataWithJSONObject:jsonObject options:0 error:&error];
+    return jsonTextData;
+}
+
+- (NSString*)JSONTextString
+{
+    NSData *jsonTextData = [self JSONTextData];
+    NSString *jsonTextString = [[NSString alloc] initWithData:jsonTextData encoding:NSUTF8StringEncoding];
+    return jsonTextString;    
+}
+
 - (NSString *)description
 {
     NSMutableString *propertyDescriptions = [[NSMutableString alloc] initWithFormat:@"%@{ ", [self class]];
@@ -139,15 +175,20 @@ SEL property_getSetter(objc_property_t property)
     for (NSString *propertyName in propertyNames) {
         SEL getter = [self getterForPropertyNamed:propertyName];
         id value = [self performSelector:getter];
-        if ([value isKindOfClass:[NSNull class]])
-            continue;
         [propertyDescriptions appendFormat:@"%@:%@, ", propertyName, value];
     }
     [propertyDescriptions appendFormat:@"}"];
     return propertyDescriptions;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    SGJsonObject *copy = [[[self class] allocWithZone:zone] initWithJSONObject:[self JSONObject]];
+    return copy;
+}
+
 #pragma mark -
+
 - (NSArray*)copyPropertyNames
 {
 	NSUInteger count = 0;
