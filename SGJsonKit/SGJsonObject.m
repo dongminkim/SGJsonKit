@@ -110,13 +110,18 @@ SEL property_getSetter(objc_property_t property)
             }
             
             id value = [dic objectForKey:propertyName];
-            if (value == nil)
-                value = [NSNull null];
-            Class itemClass = [self classForPropertyNamed:propertyName];
-            if ([itemClass conformsToProtocol:@protocol(SGJson)]) {
-                value = [[itemClass alloc] initWithJSONObject:value];
+            if (value == nil || [value isKindOfClass:[NSNull class]])
+                value = nil;
+            else {
+                Class itemClass = [self classForPropertyNamed:propertyName];
+                if ([itemClass conformsToProtocol:@protocol(SGJson)]) {
+                    value = [[itemClass alloc] initWithJSONObject:value];
+                }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                [self performSelector:setter withObject:value];
+#pragma clang diagnostic pop
             }
-            [self performSelector:setter withObject:value];
         }
     }
     return self;
@@ -150,8 +155,15 @@ SEL property_getSetter(objc_property_t property)
                         format:@"%@ has property '%@' with no getter.", self, propertyName];
         }
         
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         id value = [self performSelector:getter];
-        if ([value conformsToProtocol:@protocol(SGJson)]) {
+#pragma clang diagnostic pop
+        
+        if (value == nil || [value isKindOfClass:[NSNull class]]) {
+            value = [NSNull null];
+        }
+        else if ([value conformsToProtocol:@protocol(SGJson)]) {
             value = [value JSONObject];
         }
         [dic setObject:value forKey:propertyName];
@@ -180,7 +192,10 @@ SEL property_getSetter(objc_property_t property)
     NSArray *propertyNames = [self copyPropertyNames];
     for (NSString *propertyName in propertyNames) {
         SEL getter = [self getterForPropertyNamed:propertyName];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         id value = [self performSelector:getter];
+#pragma clang diagnostic pop
         [propertyDescriptions appendFormat:@"%@:%@, ", propertyName, value];
     }
     [propertyDescriptions appendFormat:@"}"];
@@ -197,15 +212,17 @@ SEL property_getSetter(objc_property_t property)
 
 - (NSArray*)copyPropertyNames
 {
-	NSUInteger count = 0;
-	objc_property_t *properties = class_copyPropertyList([self class], &count);
-	NSMutableArray *propertyNameArray = [[NSMutableArray alloc] initWithCapacity:count]; 
-	for (int i=0; i < count; i++)
-	{
-		NSString* propertyName = [NSString stringWithCString:property_getName(properties[i]) encoding:NSUTF8StringEncoding];
-		[propertyNameArray addObject:propertyName];
-	}
-	free(properties);
+    NSMutableArray *propertyNameArray = [[NSMutableArray alloc] init];
+    for (Class class=[self class]; [class isSubclassOfClass:[SGJsonObject class]]; class=[class superclass]) {
+        NSUInteger count = 0;
+        objc_property_t *properties = class_copyPropertyList(class, &count);
+        for (int i=0; i < count; i++)
+        {
+            NSString* propertyName = [NSString stringWithCString:property_getName(properties[i]) encoding:NSUTF8StringEncoding];
+            [propertyNameArray addObject:propertyName];
+        }
+        free(properties);
+    }
 	return propertyNameArray;
 }
 

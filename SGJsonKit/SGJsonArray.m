@@ -118,7 +118,14 @@
 
 - (BOOL)isKindOfClass:(Class)aClass
 {
+    if ([[self class] isSubclassOfClass:aClass])
+        return YES;
     return [self.array isKindOfClass:aClass];
+}
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len
+{
+    return [self.array countByEnumeratingWithState:state objects:buffer count:len];
 }
 
 - (NSUInteger)count

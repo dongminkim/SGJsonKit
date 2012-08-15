@@ -26,10 +26,11 @@
 #import <Foundation/Foundation.h>
 #import "SGJsonObject.h"
 
-@interface SGJsonArray : SGJsonObject
+@interface SGJsonArray : SGJsonObject <NSFastEnumeration>
 
 + (Class)classForArrayItem;
 
+// NSArray methods
 - (NSUInteger)count;
 - (id)objectAtIndex:(NSUInteger)index;
 - (void)addObject:(id)anObject;
