@@ -44,8 +44,8 @@
 
     STAssertTrue([demo.version isKindOfClass:[NSString class]], @"#1");
     STAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#2");
-    STAssertTrue([demo.title isKindOfClass:[NSNull class]], @"#3");
-    STAssertTrue([demo.desc isKindOfClass:[NSNull class]], @"#4");
+    STAssertTrue(demo.title == nil, @"#3");
+    STAssertTrue(demo.desc == nil, @"#4");
     STAssertTrue([[[(NSArray*)demo.members objectAtIndex:0] no] isEqualToNumber:[NSNumber numberWithInt:101]], @"#5");
     STAssertTrue([[[(NSArray*)demo.members objectAtIndex:0] name] isEqualToString:@"Dongmin Kim"], @"#6");
     STAssertTrue([[[(NSArray*)demo.members objectAtIndex:1] no] isEqualToNumber:[NSNumber numberWithInt:102]], @"#7");
