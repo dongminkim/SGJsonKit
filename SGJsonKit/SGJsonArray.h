@@ -33,6 +33,10 @@
 // NSArray methods
 - (NSUInteger)count;
 - (id)objectAtIndex:(NSUInteger)index;
+- (NSUInteger)indexOfObject:(id)anObject;
+
+// NSMutableArray methods
 - (void)addObject:(id)anObject;
+- (void)removeObjectsInRange:(NSRange)aRange;
 
 @end

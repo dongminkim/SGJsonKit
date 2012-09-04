@@ -138,6 +138,12 @@
     return [self.array objectAtIndex:index];
 }
 
+- (NSUInteger)indexOfObject:(id)anObject
+{
+    return [self.array indexOfObject:anObject];
+}
+
+#pragma mark - NSMutableArray
 - (void)addObject:(id)anObject
 {
     Class itemClass = [[self class] classForArrayItem];
@@ -146,6 +152,11 @@
                     format:@"%@ addObject: param is %@ NOT %@.", self, [anObject class], itemClass];
     }
     [self.array addObject:anObject];
+}
+
+- (void)removeObjectsInRange:(NSRange)aRange
+{
+    [self.array removeObjectsInRange:aRange];
 }
 
 @end
