@@ -82,6 +82,13 @@ SEL property_getSetter(objc_property_t property)
 #pragma mark -
 #import "SGJsonKit.h"
 
+@interface SGJsonObject ()
+- (NSArray*)copyPropertyNames;
+- (Class)classForPropertyNamed:(NSString*)name;
+- (SEL)getterForPropertyNamed:(NSString*)name;
+- (SEL)setterForPropertyNamed:(NSString*)name;
+@end
+
 @implementation SGJsonObject
 
 - (id)init
@@ -184,6 +191,23 @@ SEL property_getSetter(objc_property_t property)
     NSData *jsonTextData = [self JSONTextData];
     NSString *jsonTextString = [[NSString alloc] initWithData:jsonTextData encoding:NSUTF8StringEncoding];
     return jsonTextString;    
+}
+
+- (id)valueForEqualityCheck
+{
+    return self;
+}
+
+- (BOOL)isEqual:(id)object
+{
+    if (![object isMemberOfClass:[self class]])
+        return NO;
+    
+    id value = [self valueForEqualityCheck];
+    if (value == self)
+        return [super isEqual:object];
+
+    return [value isEqual:[object valueForEqualityCheck]];
 }
 
 - (NSString *)description

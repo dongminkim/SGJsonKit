@@ -28,10 +28,7 @@
 
 @interface SGJsonObject : NSObject <SGJson, NSCopying>
 
-- (NSArray*)copyPropertyNames;
-- (Class)classForPropertyNamed:(NSString*)name;
-- (SEL)getterForPropertyNamed:(NSString*)name;
-- (SEL)setterForPropertyNamed:(NSString*)name;
+- (id)valueForEqualityCheck;
 
 @end
 
