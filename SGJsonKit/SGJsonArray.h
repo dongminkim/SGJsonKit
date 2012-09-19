@@ -38,5 +38,11 @@
 // NSMutableArray methods
 - (void)addObject:(id)anObject;
 - (void)removeObjectsInRange:(NSRange)aRange;
+- (void)removeObject:(id)anObject;
+- (void)removeAllObjects;
+
+// Objective-C Literal methods
+- (id)objectAtIndexedSubscript:(NSUInteger)idx;
+- (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx;
 
 @end

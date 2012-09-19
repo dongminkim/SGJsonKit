@@ -143,6 +143,7 @@
     return [self.array indexOfObject:anObject];
 }
 
+
 #pragma mark - NSMutableArray
 - (void)addObject:(id)anObject
 {
@@ -158,5 +159,28 @@
 {
     [self.array removeObjectsInRange:aRange];
 }
+
+- (void)removeObject:(id)anObject
+{
+    [self.array removeObject:anObject];
+}
+
+- (void)removeAllObjects
+{
+    [self.array removeAllObjects];
+}
+
+
+#pragma mark - Objective-C Literal
+- (id)objectAtIndexedSubscript:(NSUInteger)idx
+{
+    return [self.array objectAtIndexedSubscript:idx];
+}
+
+- (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx
+{
+    [self.array setObject:obj atIndexedSubscript:idx];
+}
+
 
 @end
