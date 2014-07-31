@@ -124,11 +124,11 @@ SEL property_getSetter(objc_property_t property)
                 if ([itemClass conformsToProtocol:@protocol(SGJson)]) {
                     value = [[itemClass alloc] initWithJSONObject:value];
                 }
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 //                [self performSelector:setter withObject:value];
+//#pragma clang diagnostic pop
                 [self setValue:value forKey:propertyName];
-#pragma clang diagnostic pop
             }
         }
     }
@@ -163,11 +163,11 @@ SEL property_getSetter(objc_property_t property)
                         format:@"%@ has property '%@' with no getter.", self, propertyName];
         }
         
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 //        id value = [self performSelector:getter];
+//#pragma clang diagnostic pop
         id value = [self valueForKey:propertyName];
-#pragma clang diagnostic pop
         
         if (value == nil || [value isKindOfClass:[NSNull class]]) {
             value = [NSNull null];
@@ -218,11 +218,11 @@ SEL property_getSetter(objc_property_t property)
     NSArray *propertyNames = [self copyPropertyNames];
     for (NSString *propertyName in propertyNames) {
 //        SEL getter = [self getterForPropertyNamed:propertyName];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 //        id value = [self performSelector:getter];
+//#pragma clang diagnostic pop
         id value = [self valueForKey:propertyName];
-#pragma clang diagnostic pop
         
         [propertyDescriptions appendFormat:@"%@:%@, ", propertyName, value];
     }
@@ -251,14 +251,14 @@ SEL property_getSetter(objc_property_t property)
 //            [NSException raise:NSInternalInconsistencyException
 //                        format:@"%@ has property '%@' with no getter.", sourceObject, propertyName];
 //        }
-        
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+//        
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 //        id value = [sourceObject performSelector:getter];
 //        [self performSelector:setter withObject:value];
+//#pragma clang diagnostic pop
         id value = [self valueForKey:propertyName];
         [self setValue:value forKey:propertyName];
-#pragma clang diagnostic pop
     }
 }
 
