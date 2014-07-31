@@ -11,4 +11,5 @@
 @implementation SGDemoMember
 @synthesize no;
 @synthesize name;
+@synthesize lld;
 @end

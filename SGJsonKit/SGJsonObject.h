@@ -29,6 +29,6 @@
 @interface SGJsonObject : NSObject <SGJson, NSCopying>
 
 - (id)valueForEqualityCheck;
+- (void)update:(SGJsonObject *)sourceObject;
 
 @end
-

@@ -11,4 +11,5 @@
 @interface SGDemoMember : SGJsonObject
 @property (nonatomic, copy) NSNumber *no;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic) int64_t lld;
 @end
