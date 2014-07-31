@@ -268,7 +268,7 @@ SEL property_getSetter(objc_property_t property)
 {
     NSMutableArray *propertyNameArray = [[NSMutableArray alloc] init];
     for (Class class=[self class]; [class isSubclassOfClass:[SGJsonObject class]]; class=[class superclass]) {
-        NSUInteger count = 0;
+        unsigned int count = 0;
         objc_property_t *properties = class_copyPropertyList(class, &count);
         for (int i=0; i < count; i++)
         {
@@ -289,7 +289,7 @@ SEL property_getSetter(objc_property_t property)
         p += 3;
         const char* q = strstr(p, "\"");
         if (q > p) {
-            int len = q-p;
+            long len = q-p;
             if (len <= 100) {
                 char buf[128];
                 strncpy(buf, p, len);

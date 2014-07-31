@@ -45,19 +45,19 @@
     ((SGDemoMember*)demo.members[1]).lld = INT64_MAX;
     NSLog(@"demo 3: %@", demo);
 
-    STAssertTrue([demo.version isKindOfClass:[NSString class]], @"#1");
-    STAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#2");
-    STAssertTrue(demo.title == nil, @"#3");
-    STAssertTrue(demo.desc == nil, @"#4");
-    STAssertTrue([[[(NSArray*)demo.members objectAtIndex:0] no] isEqualToNumber:[NSNumber numberWithInt:101]], @"#5-1");
-    STAssertTrue([[[(NSArray*)demo.members objectAtIndex:0] name] isEqualToString:@"Dongmin Kim"], @"#5-2");
-    STAssertTrue([[(NSArray*)demo.members objectAtIndex:0] lld] == 1234567890, @"#5-3");
-    STAssertTrue([[[(NSArray*)demo.members objectAtIndex:1] no] isEqualToNumber:[NSNumber numberWithInt:102]], @"#6-1");
-    STAssertTrue([[[(NSArray*)demo.members objectAtIndex:1] name] isEqualToString:@"Hyo Park"], @"#6-2");
-    STAssertTrue([[(NSArray*)demo.members objectAtIndex:1] lld] == INT64_MAX, @"#6-3");
-    STAssertTrue([[[(NSArray*)demo.members objectAtIndex:2] no] isEqualToNumber:[NSNumber numberWithInt:103]], @"#7-1");
-    STAssertTrue([[[(NSArray*)demo.members objectAtIndex:2] name] isEqualToString:@"Susie Shin"], @"#7-2");
-    STAssertTrue([[(NSArray*)demo.members objectAtIndex:2] lld] == 0, @"#7-3");
+    XCTAssertTrue([demo.version isKindOfClass:[NSString class]], @"#1");
+    XCTAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#2");
+    XCTAssertTrue(demo.title == nil, @"#3");
+    XCTAssertTrue(demo.desc == nil, @"#4");
+    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:0] no] isEqualToNumber:[NSNumber numberWithInt:101]], @"#5-1");
+    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:0] name] isEqualToString:@"Dongmin Kim"], @"#5-2");
+    XCTAssertTrue([[(NSArray*)demo.members objectAtIndex:0] lld] == 1234567890, @"#5-3");
+    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:1] no] isEqualToNumber:[NSNumber numberWithInt:102]], @"#6-1");
+    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:1] name] isEqualToString:@"Hyo Park"], @"#6-2");
+    XCTAssertTrue([[(NSArray*)demo.members objectAtIndex:1] lld] == INT64_MAX, @"#6-3");
+    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:2] no] isEqualToNumber:[NSNumber numberWithInt:103]], @"#7-1");
+    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:2] name] isEqualToString:@"Susie Shin"], @"#7-2");
+    XCTAssertTrue([[(NSArray*)demo.members objectAtIndex:2] lld] == 0, @"#7-3");
 }
 
 @end

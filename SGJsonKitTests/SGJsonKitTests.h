@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 TheVanity.org. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface SGJsonKitTests : SenTestCase
+@interface SGJsonKitTests : XCTestCase
 
 @end

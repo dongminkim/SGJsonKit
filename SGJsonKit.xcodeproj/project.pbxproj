@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2486566515BB2CE400F575E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2486566415BB2CE400F575E4 /* Foundation.framework */; };
-		2486567315BB2CE400F575E4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2486567215BB2CE400F575E4 /* SenTestingKit.framework */; };
 		2486567615BB2CE400F575E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2486566415BB2CE400F575E4 /* Foundation.framework */; };
 		2486567915BB2CE400F575E4 /* libSGJsonKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2486566115BB2CE400F575E4 /* libSGJsonKit.a */; };
 		2486567F15BB2CE400F575E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2486567D15BB2CE400F575E4 /* InfoPlist.strings */; };
@@ -39,8 +38,7 @@
 		2486566115BB2CE400F575E4 /* libSGJsonKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSGJsonKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2486566415BB2CE400F575E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2486566815BB2CE400F575E4 /* SGJsonKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SGJsonKit-Prefix.pch"; sourceTree = "<group>"; };
-		2486567115BB2CE400F575E4 /* SGJsonKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGJsonKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2486567215BB2CE400F575E4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2486567115BB2CE400F575E4 /* SGJsonKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGJsonKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2486567C15BB2CE400F575E4 /* SGJsonKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SGJsonKitTests-Info.plist"; sourceTree = "<group>"; };
 		2486567E15BB2CE400F575E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2486568015BB2CE400F575E4 /* SGJsonKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGJsonKitTests.h; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				248656C115BB327F00F575E4 /* UIKit.framework in Frameworks */,
-				2486567315BB2CE400F575E4 /* SenTestingKit.framework in Frameworks */,
 				2486567615BB2CE400F575E4 /* Foundation.framework in Frameworks */,
 				2486567915BB2CE400F575E4 /* libSGJsonKit.a in Frameworks */,
 			);
@@ -97,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				2486566115BB2CE400F575E4 /* libSGJsonKit.a */,
-				2486567115BB2CE400F575E4 /* SGJsonKitTests.octest */,
+				2486567115BB2CE400F575E4 /* SGJsonKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				2486566415BB2CE400F575E4 /* Foundation.framework */,
-				2486567215BB2CE400F575E4 /* SenTestingKit.framework */,
 				248656C015BB327F00F575E4 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -217,8 +213,8 @@
 			);
 			name = SGJsonKitTests;
 			productName = SGJsonKitTests;
-			productReference = 2486567115BB2CE400F575E4 /* SGJsonKitTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 2486567115BB2CE400F575E4 /* SGJsonKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -226,7 +222,8 @@
 		2486565815BB2CE400F575E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = TheVanity.org;
 			};
 			buildConfigurationList = 2486565B15BB2CE400F575E4 /* Build configuration list for PBXProject "SGJsonKit" */;
@@ -321,8 +318,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -333,10 +335,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -345,13 +351,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -388,13 +402,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SGJsonKit/SGJsonKit-Prefix.pch";
 				INFOPLIST_FILE = "SGJsonKitTests/SGJsonKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -403,13 +416,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SGJsonKit/SGJsonKit-Prefix.pch";
 				INFOPLIST_FILE = "SGJsonKitTests/SGJsonKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
