@@ -6,7 +6,8 @@ SGJsonKit
  * Generate JSON from Objective-C classes
 
 * Requirements
- * iOS 5+ (ARC, NSJSONSerialization)
+ * iOS v5.0 and later
+ * Mac OS X v10.7 and later
 
 * License
  * MIT License
