@@ -59,7 +59,6 @@
     XCTAssertTrue([[demo.members[2] name] isEqualToString:@"Susie Shin"], @"#7-2");
     XCTAssertTrue([demo.members[2] lld] == 0, @"#7-3");
     XCTAssertTrue(demo.topScores.count == 3, @"#8-1");
-    long *longValues = demo.topScores.values;
     XCTAssertTrue(demo.topScores.values[0] == 1234567890L, @"#8-2");
     XCTAssertTrue(demo.topScores.values[1] == 7907170000L, @"#8-3");
     XCTAssertTrue(demo.topScores.values[2] == -987654321L, @"#8-4");

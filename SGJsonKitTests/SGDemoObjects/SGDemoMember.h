@@ -6,11 +6,10 @@
 //  Copyright (c) 2012 TheVanity.org. All rights reserved.
 //
 
-#import "SGJsonObject.h"
+#import "SGDemoAccount.h"
 
-@interface SGDemoMember : SGJsonObject
+@interface SGDemoMember : SGDemoAccount
 
-@property (nonatomic, copy) NSNumber *no;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) int64_t lld;
 

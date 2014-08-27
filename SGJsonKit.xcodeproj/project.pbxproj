@@ -32,6 +32,7 @@
 		F1F7B25B19AD9B6400AD1FD7 /* SGLongLongArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B25219AD9B6400AD1FD7 /* SGLongLongArray.m */; };
 		F1F7B25C19AD9B6400AD1FD7 /* SGNumberArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7B25319AD9B6400AD1FD7 /* SGNumberArray.h */; };
 		F1F7B25E19ADB12100AD1FD7 /* testSample.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F7B25D19ADB12100AD1FD7 /* testSample.json */; };
+		F1F7B27C19ADCE3F00AD1FD7 /* SGDemoAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B27B19ADCE3F00AD1FD7 /* SGDemoAccount.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		F1F7B25219AD9B6400AD1FD7 /* SGLongLongArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLongLongArray.m; sourceTree = "<group>"; };
 		F1F7B25319AD9B6400AD1FD7 /* SGNumberArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGNumberArray.h; sourceTree = "<group>"; };
 		F1F7B25D19ADB12100AD1FD7 /* testSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testSample.json; sourceTree = "<group>"; };
+		F1F7B27A19ADCE3F00AD1FD7 /* SGDemoAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDemoAccount.h; sourceTree = "<group>"; };
+		F1F7B27B19ADCE3F00AD1FD7 /* SGDemoAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDemoAccount.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,8 @@
 		248656B515BB301200F575E4 /* SGDemoObjects */ = {
 			isa = PBXGroup;
 			children = (
+				F1F7B27A19ADCE3F00AD1FD7 /* SGDemoAccount.h */,
+				F1F7B27B19ADCE3F00AD1FD7 /* SGDemoAccount.m */,
 				248656B615BB301200F575E4 /* SGDemoMember.h */,
 				248656B715BB301200F575E4 /* SGDemoMember.m */,
 				248656B815BB301200F575E4 /* SGDemoMembers.h */,
@@ -335,6 +340,7 @@
 			files = (
 				2486568215BB2CE400F575E4 /* SGJsonKitTests.m in Sources */,
 				248656BC15BB301200F575E4 /* SGDemoMember.m in Sources */,
+				F1F7B27C19ADCE3F00AD1FD7 /* SGDemoAccount.m in Sources */,
 				248656BD15BB301200F575E4 /* SGDemoMembers.m in Sources */,
 				248656BE15BB301200F575E4 /* SGDemoRoot.m in Sources */,
 			);
