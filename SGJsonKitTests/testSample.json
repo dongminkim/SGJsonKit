@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "desc": null,
+  "members": [
+    {
+      "no": 101,
+      "name": "Dongmin Kim",
+      "lld": 1234567890
+    },
+    {
+      "no": 102,
+      "name": "Hyo Park"
+    }
+  ],
+  "topScores": [
+    1234567890,
+    7907170000,
+    -987654321
+  ]
+}

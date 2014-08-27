@@ -48,6 +48,8 @@
                 id value = value_;
                 if ([itemClass conformsToProtocol:@protocol(SGJson)]) {
                     value = [[itemClass alloc] initWithJSONObject:value];
+                } else if ([itemClass conformsToProtocol:@protocol(SGNumberArray)]) {
+                    value = [[itemClass alloc] initWithNumberArray:value];
                 }
                 [values addObject:value];
             }
@@ -64,6 +66,8 @@
         id value = value_;
         if ([value conformsToProtocol:@protocol(SGJson)]) {
             value = [value JSONObject];
+        } else if ([value conformsToProtocol:@protocol(SGNumberArray)]) {
+            value = [value numberArray];
         }
         [arr addObject:value];
     }

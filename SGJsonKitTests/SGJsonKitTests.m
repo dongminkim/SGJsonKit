@@ -29,8 +29,8 @@
 
 - (void)testSGJsonKit_01
 {
-    NSString *jsonTextString = @"{\"version\":\"1.0.0\",\"desc\":null,\"members\":[{\"no\":101,\"name\":\"Dongmin Kim\",\"lld\":1234567890}, {\"no\":102,\"name\":\"Hyo Park\"}]}";
-    SGDemoRoot *demo = [[SGDemoRoot alloc] initWithJSONTextString:jsonTextString];
+    NSData *jsonData = [NSData dataWithContentsOfURL:[[NSBundle bundleForClass:self.class] URLForResource:@"testSample" withExtension:@"json"]];
+    SGDemoRoot *demo = [[SGDemoRoot alloc] initWithJSONTextData:jsonData];
     NSLog(@"demo 0: %@", demo);
     
     NSString *generatedJsonTextString = [demo JSONTextString];
@@ -49,15 +49,20 @@
     XCTAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#2");
     XCTAssertTrue(demo.title == nil, @"#3");
     XCTAssertTrue(demo.desc == nil, @"#4");
-    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:0] no] isEqualToNumber:[NSNumber numberWithInt:101]], @"#5-1");
-    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:0] name] isEqualToString:@"Dongmin Kim"], @"#5-2");
-    XCTAssertTrue([[(NSArray*)demo.members objectAtIndex:0] lld] == 1234567890, @"#5-3");
-    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:1] no] isEqualToNumber:[NSNumber numberWithInt:102]], @"#6-1");
-    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:1] name] isEqualToString:@"Hyo Park"], @"#6-2");
-    XCTAssertTrue([[(NSArray*)demo.members objectAtIndex:1] lld] == INT64_MAX, @"#6-3");
-    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:2] no] isEqualToNumber:[NSNumber numberWithInt:103]], @"#7-1");
-    XCTAssertTrue([[[(NSArray*)demo.members objectAtIndex:2] name] isEqualToString:@"Susie Shin"], @"#7-2");
-    XCTAssertTrue([[(NSArray*)demo.members objectAtIndex:2] lld] == 0, @"#7-3");
+    XCTAssertTrue([[demo.members[0] no] isEqualToNumber:[NSNumber numberWithInt:101]], @"#5-1");
+    XCTAssertTrue([[demo.members[0] name] isEqualToString:@"Dongmin Kim"], @"#5-2");
+    XCTAssertTrue([demo.members[0] lld] == 1234567890, @"#5-3");
+    XCTAssertTrue([[demo.members[1] no] isEqualToNumber:[NSNumber numberWithInt:102]], @"#6-1");
+    XCTAssertTrue([[demo.members[1] name] isEqualToString:@"Hyo Park"], @"#6-2");
+    XCTAssertTrue([demo.members[1] lld] == INT64_MAX, @"#6-3");
+    XCTAssertTrue([[demo.members[2] no] isEqualToNumber:[NSNumber numberWithInt:103]], @"#7-1");
+    XCTAssertTrue([[demo.members[2] name] isEqualToString:@"Susie Shin"], @"#7-2");
+    XCTAssertTrue([demo.members[2] lld] == 0, @"#7-3");
+    XCTAssertTrue(demo.topScores.count == 3, @"#8-1");
+    long *longValues = demo.topScores.values;
+    XCTAssertTrue(demo.topScores.values[0] == 1234567890L, @"#8-2");
+    XCTAssertTrue(demo.topScores.values[1] == 7907170000L, @"#8-3");
+    XCTAssertTrue(demo.topScores.values[2] == -987654321L, @"#8-4");
 }
 
 @end

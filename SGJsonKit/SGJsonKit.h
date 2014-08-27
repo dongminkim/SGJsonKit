@@ -5,5 +5,12 @@
 //
 
 #import "SGJson.h"
+
+#import "SGNumberArray.h"
 #import "SGJsonObject.h"
 #import "SGJsonArray.h"
+
+#import "SGBoolArray.h"
+#import "SGIntArray.h"
+#import "SGLongArray.h"
+#import "SGLongLongArray.h"

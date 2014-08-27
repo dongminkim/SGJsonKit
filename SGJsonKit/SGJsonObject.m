@@ -98,12 +98,14 @@ SEL property_getSetter(objc_property_t property)
             }
             
             id value = [dic objectForKey:propertyName];
-            if (value == nil || [value isKindOfClass:[NSNull class]])
+            if (value == nil || [value isKindOfClass:[NSNull class]]) {
                 value = nil;
-            else {
+            } else {
                 Class itemClass = [self classForPropertyNamed:propertyName];
                 if ([itemClass conformsToProtocol:@protocol(SGJson)]) {
                     value = [[itemClass alloc] initWithJSONObject:value];
+                } else if ([itemClass conformsToProtocol:@protocol(SGNumberArray)]) {
+                    value = [[itemClass alloc] initWithNumberArray:value];
                 }
 //#pragma clang diagnostic push
 //#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -152,9 +154,10 @@ SEL property_getSetter(objc_property_t property)
         
         if (value == nil || [value isKindOfClass:[NSNull class]]) {
             value = [NSNull null];
-        }
-        else if ([value conformsToProtocol:@protocol(SGJson)]) {
+        } else if ([value conformsToProtocol:@protocol(SGJson)]) {
             value = [value JSONObject];
+        } else if ([value conformsToProtocol:@protocol(SGNumberArray)]) {
+            value = [value numberArray];
         }
         [dic setObject:value forKey:propertyName];
     }

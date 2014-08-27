@@ -22,6 +22,16 @@
 		248656BD15BB301200F575E4 /* SGDemoMembers.m in Sources */ = {isa = PBXBuildFile; fileRef = 248656B915BB301200F575E4 /* SGDemoMembers.m */; };
 		248656BE15BB301200F575E4 /* SGDemoRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 248656BB15BB301200F575E4 /* SGDemoRoot.m */; };
 		248656C115BB327F00F575E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248656C015BB327F00F575E4 /* UIKit.framework */; };
+		F1F7B25419AD9B6400AD1FD7 /* SGBoolArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7B24B19AD9B6400AD1FD7 /* SGBoolArray.h */; };
+		F1F7B25519AD9B6400AD1FD7 /* SGBoolArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B24C19AD9B6400AD1FD7 /* SGBoolArray.m */; };
+		F1F7B25619AD9B6400AD1FD7 /* SGIntArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7B24D19AD9B6400AD1FD7 /* SGIntArray.h */; };
+		F1F7B25719AD9B6400AD1FD7 /* SGIntArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B24E19AD9B6400AD1FD7 /* SGIntArray.m */; };
+		F1F7B25819AD9B6400AD1FD7 /* SGLongArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7B24F19AD9B6400AD1FD7 /* SGLongArray.h */; };
+		F1F7B25919AD9B6400AD1FD7 /* SGLongArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B25019AD9B6400AD1FD7 /* SGLongArray.m */; };
+		F1F7B25A19AD9B6400AD1FD7 /* SGLongLongArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7B25119AD9B6400AD1FD7 /* SGLongLongArray.h */; };
+		F1F7B25B19AD9B6400AD1FD7 /* SGLongLongArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B25219AD9B6400AD1FD7 /* SGLongLongArray.m */; };
+		F1F7B25C19AD9B6400AD1FD7 /* SGNumberArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7B25319AD9B6400AD1FD7 /* SGNumberArray.h */; };
+		F1F7B25E19ADB12100AD1FD7 /* testSample.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F7B25D19ADB12100AD1FD7 /* testSample.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +66,16 @@
 		248656BA15BB301200F575E4 /* SGDemoRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDemoRoot.h; sourceTree = "<group>"; };
 		248656BB15BB301200F575E4 /* SGDemoRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDemoRoot.m; sourceTree = "<group>"; };
 		248656C015BB327F00F575E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F1F7B24B19AD9B6400AD1FD7 /* SGBoolArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBoolArray.h; sourceTree = "<group>"; };
+		F1F7B24C19AD9B6400AD1FD7 /* SGBoolArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBoolArray.m; sourceTree = "<group>"; };
+		F1F7B24D19AD9B6400AD1FD7 /* SGIntArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGIntArray.h; sourceTree = "<group>"; };
+		F1F7B24E19AD9B6400AD1FD7 /* SGIntArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGIntArray.m; sourceTree = "<group>"; };
+		F1F7B24F19AD9B6400AD1FD7 /* SGLongArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLongArray.h; sourceTree = "<group>"; };
+		F1F7B25019AD9B6400AD1FD7 /* SGLongArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLongArray.m; sourceTree = "<group>"; };
+		F1F7B25119AD9B6400AD1FD7 /* SGLongLongArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLongLongArray.h; sourceTree = "<group>"; };
+		F1F7B25219AD9B6400AD1FD7 /* SGLongLongArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLongLongArray.m; sourceTree = "<group>"; };
+		F1F7B25319AD9B6400AD1FD7 /* SGNumberArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGNumberArray.h; sourceTree = "<group>"; };
+		F1F7B25D19ADB12100AD1FD7 /* testSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testSample.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +137,7 @@
 				2486569415BB2D7A00F575E4 /* SGJsonObject.m */,
 				2486568F15BB2D7A00F575E4 /* SGJsonArray.h */,
 				2486569015BB2D7A00F575E4 /* SGJsonArray.m */,
+				F1F7B24A19AD9B6400AD1FD7 /* NumberArray */,
 				2486566715BB2CE400F575E4 /* Supporting Files */,
 			);
 			path = SGJsonKit;
@@ -146,6 +167,7 @@
 			children = (
 				2486567C15BB2CE400F575E4 /* SGJsonKitTests-Info.plist */,
 				2486567D15BB2CE400F575E4 /* InfoPlist.strings */,
+				F1F7B25D19ADB12100AD1FD7 /* testSample.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,6 +185,22 @@
 			path = SGDemoObjects;
 			sourceTree = "<group>";
 		};
+		F1F7B24A19AD9B6400AD1FD7 /* NumberArray */ = {
+			isa = PBXGroup;
+			children = (
+				F1F7B25319AD9B6400AD1FD7 /* SGNumberArray.h */,
+				F1F7B24B19AD9B6400AD1FD7 /* SGBoolArray.h */,
+				F1F7B24C19AD9B6400AD1FD7 /* SGBoolArray.m */,
+				F1F7B24D19AD9B6400AD1FD7 /* SGIntArray.h */,
+				F1F7B24E19AD9B6400AD1FD7 /* SGIntArray.m */,
+				F1F7B24F19AD9B6400AD1FD7 /* SGLongArray.h */,
+				F1F7B25019AD9B6400AD1FD7 /* SGLongArray.m */,
+				F1F7B25119AD9B6400AD1FD7 /* SGLongLongArray.h */,
+				F1F7B25219AD9B6400AD1FD7 /* SGLongLongArray.m */,
+			);
+			path = NumberArray;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -170,10 +208,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F7B25A19AD9B6400AD1FD7 /* SGLongLongArray.h in Headers */,
+				F1F7B25419AD9B6400AD1FD7 /* SGBoolArray.h in Headers */,
 				2486569515BB2D7A00F575E4 /* SGJson.h in Headers */,
+				F1F7B25819AD9B6400AD1FD7 /* SGLongArray.h in Headers */,
 				2486569615BB2D7A00F575E4 /* SGJsonArray.h in Headers */,
 				2486569815BB2D7A00F575E4 /* SGJsonKit.h in Headers */,
+				F1F7B25619AD9B6400AD1FD7 /* SGIntArray.h in Headers */,
 				2486569A15BB2D7A00F575E4 /* SGJsonObject.h in Headers */,
+				F1F7B25C19AD9B6400AD1FD7 /* SGNumberArray.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2486567F15BB2CE400F575E4 /* InfoPlist.strings in Resources */,
+				F1F7B25E19ADB12100AD1FD7 /* testSample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +322,10 @@
 			files = (
 				2486569715BB2D7A00F575E4 /* SGJsonArray.m in Sources */,
 				2486569B15BB2D7A00F575E4 /* SGJsonObject.m in Sources */,
+				F1F7B25519AD9B6400AD1FD7 /* SGBoolArray.m in Sources */,
+				F1F7B25719AD9B6400AD1FD7 /* SGIntArray.m in Sources */,
+				F1F7B25919AD9B6400AD1FD7 /* SGLongArray.m in Sources */,
+				F1F7B25B19AD9B6400AD1FD7 /* SGLongLongArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +455,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SGJsonKit/SGJsonKit-Prefix.pch";
 				INFOPLIST_FILE = "SGJsonKitTests/SGJsonKitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -421,6 +475,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SGJsonKit/SGJsonKit-Prefix.pch";
 				INFOPLIST_FILE = "SGJsonKitTests/SGJsonKitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -11,9 +11,12 @@
 @class SGDemoMembers;
 
 @interface SGDemoRoot : SGJsonObject
+
 @property (nonatomic, copy) NSString *version;
 @property (nonatomic, copy) NSNumber *buildCount;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *desc;
 @property (nonatomic, copy) SGDemoMembers *members;
+@property (nonatomic, copy) SGLongArray *topScores;
+
 @end

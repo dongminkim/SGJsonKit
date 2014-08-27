@@ -10,9 +10,5 @@
 #import "SGDemoMembers.h"
 
 @implementation SGDemoRoot
-@synthesize version;
-@synthesize buildCount;
-@synthesize title;
-@synthesize desc;
-@synthesize members;
+
 @end
