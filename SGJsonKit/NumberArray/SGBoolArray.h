@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "SGNumberArray.h"
 
-@interface SGBoolArray : NSObject <SGNumberArray, NSCopying>
+@interface SGBoolArray : SGNumberArray
 
 @property (nonatomic, readonly) BOOL *values;
 @property (nonatomic, readonly) NSUInteger count;

@@ -210,7 +210,8 @@ SEL property_getSetter(objc_property_t property)
         
         [propertyDescriptions appendFormat:@"%@:%@, ", propertyName, value];
     }
-    [propertyDescriptions appendFormat:@"}"];
+    [propertyDescriptions deleteCharactersInRange:NSMakeRange(propertyDescriptions.length - 2, 2)];
+    [propertyDescriptions appendFormat:@" }"];
     return propertyDescriptions;
 }
 

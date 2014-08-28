@@ -77,11 +77,11 @@
 - (NSString *)description
 {
     NSMutableString *propertyDescriptions = [[NSMutableString alloc] initWithFormat:@"%@[\n", [self class]];
-    for (id value_ in self.array) {
-        id value = value_;
+    for (id value in self.array) {
         [propertyDescriptions appendFormat:@"\t%@,\n", value];
     }
-    [propertyDescriptions appendFormat:@"]"];
+    [propertyDescriptions deleteCharactersInRange:NSMakeRange(propertyDescriptions.length - 2, 2)];
+    [propertyDescriptions appendFormat:@"\n]"];
     return propertyDescriptions;
 }
 

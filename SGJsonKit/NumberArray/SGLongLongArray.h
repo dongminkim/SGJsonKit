@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "SGNumberArray.h"
 
-@interface SGLongLongArray : NSObject <SGNumberArray, NSCopying>
+@interface SGLongLongArray : SGNumberArray
 
 @property (nonatomic, readonly) long long *values;
 @property (nonatomic, readonly) NSUInteger count;

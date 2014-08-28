@@ -16,3 +16,8 @@
 - (NSArray *)numberArray;
 
 @end
+
+
+@interface SGNumberArray : NSObject <SGNumberArray, NSCopying>
+
+@end

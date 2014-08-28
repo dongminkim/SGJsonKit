@@ -33,6 +33,7 @@
 		F1F7B25C19AD9B6400AD1FD7 /* SGNumberArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7B25319AD9B6400AD1FD7 /* SGNumberArray.h */; };
 		F1F7B25E19ADB12100AD1FD7 /* testSample.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F7B25D19ADB12100AD1FD7 /* testSample.json */; };
 		F1F7B27C19ADCE3F00AD1FD7 /* SGDemoAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B27B19ADCE3F00AD1FD7 /* SGDemoAccount.m */; };
+		F1F7B28619AED12D00AD1FD7 /* SGNumberArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B28519AED12D00AD1FD7 /* SGNumberArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		F1F7B25D19ADB12100AD1FD7 /* testSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testSample.json; sourceTree = "<group>"; };
 		F1F7B27A19ADCE3F00AD1FD7 /* SGDemoAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDemoAccount.h; sourceTree = "<group>"; };
 		F1F7B27B19ADCE3F00AD1FD7 /* SGDemoAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDemoAccount.m; sourceTree = "<group>"; };
+		F1F7B28519AED12D00AD1FD7 /* SGNumberArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGNumberArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				F1F7B25319AD9B6400AD1FD7 /* SGNumberArray.h */,
+				F1F7B28519AED12D00AD1FD7 /* SGNumberArray.m */,
 				F1F7B24B19AD9B6400AD1FD7 /* SGBoolArray.h */,
 				F1F7B24C19AD9B6400AD1FD7 /* SGBoolArray.m */,
 				F1F7B24D19AD9B6400AD1FD7 /* SGIntArray.h */,
@@ -328,6 +331,7 @@
 				2486569715BB2D7A00F575E4 /* SGJsonArray.m in Sources */,
 				2486569B15BB2D7A00F575E4 /* SGJsonObject.m in Sources */,
 				F1F7B25519AD9B6400AD1FD7 /* SGBoolArray.m in Sources */,
+				F1F7B28619AED12D00AD1FD7 /* SGNumberArray.m in Sources */,
 				F1F7B25719AD9B6400AD1FD7 /* SGIntArray.m in Sources */,
 				F1F7B25919AD9B6400AD1FD7 /* SGLongArray.m in Sources */,
 				F1F7B25B19AD9B6400AD1FD7 /* SGLongLongArray.m in Sources */,
