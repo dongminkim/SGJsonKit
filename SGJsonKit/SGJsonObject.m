@@ -242,7 +242,7 @@ SEL property_getSetter(objc_property_t property)
 //        id value = [sourceObject performSelector:getter];
 //        [self performSelector:setter withObject:value];
 //#pragma clang diagnostic pop
-        id value = [self valueForKey:propertyName];
+        id value = [sourceObject valueForKey:propertyName];
         [self setValue:value forKey:propertyName];
     }
 }
