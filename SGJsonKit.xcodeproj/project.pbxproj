@@ -34,6 +34,8 @@
 		F1F7B25E19ADB12100AD1FD7 /* testSample.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F7B25D19ADB12100AD1FD7 /* testSample.json */; };
 		F1F7B27C19ADCE3F00AD1FD7 /* SGDemoAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B27B19ADCE3F00AD1FD7 /* SGDemoAccount.m */; };
 		F1F7B28619AED12D00AD1FD7 /* SGNumberArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B28519AED12D00AD1FD7 /* SGNumberArray.m */; };
+		F1F7B2F419B49E5400AD1FD7 /* NSObject+SGJsonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F7B2F219B49E5400AD1FD7 /* NSObject+SGJsonKit.h */; };
+		F1F7B2F519B49E5400AD1FD7 /* NSObject+SGJsonKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B2F319B49E5400AD1FD7 /* NSObject+SGJsonKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		F1F7B27A19ADCE3F00AD1FD7 /* SGDemoAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDemoAccount.h; sourceTree = "<group>"; };
 		F1F7B27B19ADCE3F00AD1FD7 /* SGDemoAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDemoAccount.m; sourceTree = "<group>"; };
 		F1F7B28519AED12D00AD1FD7 /* SGNumberArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGNumberArray.m; sourceTree = "<group>"; };
+		F1F7B2F219B49E5400AD1FD7 /* NSObject+SGJsonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SGJsonKit.h"; sourceTree = "<group>"; };
+		F1F7B2F319B49E5400AD1FD7 /* NSObject+SGJsonKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SGJsonKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 				2486569415BB2D7A00F575E4 /* SGJsonObject.m */,
 				2486568F15BB2D7A00F575E4 /* SGJsonArray.h */,
 				2486569015BB2D7A00F575E4 /* SGJsonArray.m */,
+				F1F7B2F219B49E5400AD1FD7 /* NSObject+SGJsonKit.h */,
+				F1F7B2F319B49E5400AD1FD7 /* NSObject+SGJsonKit.m */,
 				F1F7B24A19AD9B6400AD1FD7 /* NumberArray */,
 				2486566715BB2CE400F575E4 /* Supporting Files */,
 			);
@@ -223,6 +229,7 @@
 				2486569615BB2D7A00F575E4 /* SGJsonArray.h in Headers */,
 				2486569815BB2D7A00F575E4 /* SGJsonKit.h in Headers */,
 				F1F7B25619AD9B6400AD1FD7 /* SGIntArray.h in Headers */,
+				F1F7B2F419B49E5400AD1FD7 /* NSObject+SGJsonKit.h in Headers */,
 				2486569A15BB2D7A00F575E4 /* SGJsonObject.h in Headers */,
 				F1F7B25C19AD9B6400AD1FD7 /* SGNumberArray.h in Headers */,
 			);
@@ -334,6 +341,7 @@
 				F1F7B28619AED12D00AD1FD7 /* SGNumberArray.m in Sources */,
 				F1F7B25719AD9B6400AD1FD7 /* SGIntArray.m in Sources */,
 				F1F7B25919AD9B6400AD1FD7 /* SGLongArray.m in Sources */,
+				F1F7B2F519B49E5400AD1FD7 /* NSObject+SGJsonKit.m in Sources */,
 				F1F7B25B19AD9B6400AD1FD7 /* SGLongLongArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
