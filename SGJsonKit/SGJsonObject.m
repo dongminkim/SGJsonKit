@@ -109,13 +109,8 @@
 
 - (NSString *)description
 {
-    NSMutableString *propertyDescriptions = [[NSMutableString alloc] initWithFormat:@"%@{ ", [self class]];
-    [self enumeratePropertyKeysAndValuesUsingBlock:^(NSString *key, id value) {
-        [propertyDescriptions appendFormat:@"%@:%@, ", key, value];
-    } untilSuperClass:SGJsonObject.class];
-    [propertyDescriptions deleteCharactersInRange:NSMakeRange(propertyDescriptions.length - 2, 2)];
-    [propertyDescriptions appendFormat:@" }"];
-    return propertyDescriptions;
+    NSString *desc = [NSObject describeProperties:self untilSuperClass:SGJsonObject.class];
+    return desc;
 }
 
 - (id)copyWithZone:(NSZone *)zone

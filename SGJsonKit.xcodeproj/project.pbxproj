@@ -55,7 +55,6 @@
 		2486567115BB2CE400F575E4 /* SGJsonKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGJsonKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2486567C15BB2CE400F575E4 /* SGJsonKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SGJsonKitTests-Info.plist"; sourceTree = "<group>"; };
 		2486567E15BB2CE400F575E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2486568015BB2CE400F575E4 /* SGJsonKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGJsonKitTests.h; sourceTree = "<group>"; };
 		2486568115BB2CE400F575E4 /* SGJsonKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGJsonKitTests.m; sourceTree = "<group>"; };
 		2486568E15BB2D7A00F575E4 /* SGJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGJson.h; sourceTree = "<group>"; };
 		2486568F15BB2D7A00F575E4 /* SGJsonArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGJsonArray.h; sourceTree = "<group>"; };
@@ -166,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				248656B515BB301200F575E4 /* SGDemoObjects */,
-				2486568015BB2CE400F575E4 /* SGJsonKitTests.h */,
 				2486568115BB2CE400F575E4 /* SGJsonKitTests.m */,
 				2486567B15BB2CE400F575E4 /* Supporting Files */,
 			);

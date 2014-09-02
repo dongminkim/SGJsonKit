@@ -5,6 +5,7 @@
 //
 
 #import "SGNumberArray.h"
+#import "NSObject+SGJsonKit.h"
 
 @implementation SGNumberArray
 
@@ -17,6 +18,12 @@
 - (NSArray *)numberArray
 {
     NSAssert(NO, @"You should override the method numberArray");
+    return nil;
+}
+
+- (NSNumber *)numberAtIndex:(NSUInteger)idx
+{
+    NSAssert(NO, @"You should override the method numberAtIndex");
     return nil;
 }
 
@@ -34,13 +41,30 @@
 
 - (NSString *)description
 {
-    NSMutableString *propertyDescriptions = [[NSMutableString alloc] initWithFormat:@"%@[", [self class]];
-    for (NSNumber *number in self.numberArray) {
-        [propertyDescriptions appendFormat:@"%@, ", number.stringValue];
-    }
-    [propertyDescriptions deleteCharactersInRange:NSMakeRange(propertyDescriptions.length - 2, 2)];
-    [propertyDescriptions appendFormat:@"]"];
-    return propertyDescriptions;
+    return [NSObject describeArrayItems:self];
+}
+
+
+#pragma mark - NSArray enumerate methods
+
+- (void)enumerateObjectsAtIndexes:(NSIndexSet *)indexSet options:(NSEnumerationOptions)opts usingBlock:(void (^)(id, NSUInteger, BOOL *))block
+{
+    NSParameterAssert(block != nil);
+    
+    [indexSet enumerateIndexesWithOptions:opts usingBlock:^(NSUInteger idx, BOOL *stop) {
+        block([self numberAtIndex:idx], idx, stop);
+    }];
+}
+
+- (void)enumerateObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(id, NSUInteger, BOOL *))block
+{
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, self.count)];
+    [self enumerateObjectsAtIndexes:indexSet options:opts usingBlock:block];
+}
+
+- (void)enumerateObjectsUsingBlock:(void (^)(id, NSUInteger, BOOL *))block
+{
+    [self enumerateObjectsWithOptions:0 usingBlock:block];
 }
 
 @end

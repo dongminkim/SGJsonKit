@@ -63,18 +63,66 @@ static SEL property_getSetter(objc_property_t property)
 #pragma mark -
 
 #import "NSObject+SGJsonKit.h"
+#import "SGJsonObject.h"
+#import "SGJsonArray.h"
+#import "SGNumberArray.h"
 
 @implementation NSObject (SGJsonKit)
+
++ (NSString *)describe:(id)object
+{
+    if ([object isKindOfClass:[SGJsonObject class]]) {
+        return [self describeProperties:object untilSuperClass:[SGJsonObject class]];
+    } else if ([object respondsToSelector:@selector(enumerateObjectsUsingBlock:)]) {
+        return [self describeArrayItems:object];
+    } else if ([object respondsToSelector:@selector(enumerateKeysAndObjectsUsingBlock:)]) {
+        return [self describeDictionaryItems:object];
+    } else {
+        return [self describeProperties:object];
+    }
+}
+
++ (NSString *)describeProperties:(id)object
+{
+    return [self describeProperties:object untilSuperClass:[object superclass]];
+}
+
++ (NSString *)describeProperties:(id)object untilSuperClass:(Class)superClass
+{
+    NSMutableArray *items = [NSMutableArray array];
+    [object enumeratePropertyKeysAndValuesUsingBlock:^(NSString *key, id value) {
+        [items addObject:[NSString stringWithFormat:@"%@:%@", key, value]];
+    } untilSuperClass:superClass];
+    return [NSString stringWithFormat:@"%@{%@}", [object class], [items componentsJoinedByString:@", "]];
+}
+
++ (NSString *)describeDictionaryItems:(id)object
+{
+    NSMutableArray *items = [NSMutableArray array];
+    [object enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [items addObject:[NSString stringWithFormat:@"%@:%@", key, obj]];
+    }];
+    return [NSString stringWithFormat:@"%@[%@]", [object class], [items componentsJoinedByString:@", "]];
+}
+
++ (NSString *)describeArrayItems:(id)object
+{
+    NSMutableArray *items = [NSMutableArray array];
+    [object enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [items addObject:[obj description]];
+    }];
+    return [NSString stringWithFormat:@"%@[%@]", [object class], [items componentsJoinedByString:@", "]];
+}
 
 - (void)enumeratePropertyKeysUsingBlock:(void (^)(NSString *))block
 {
     [self enumeratePropertyKeysUsingBlock:block untilSuperClass:self.superclass];
 }
 
-- (void)enumeratePropertyKeysUsingBlock:(void (^)(NSString *))block untilSuperClass:(Class)superCls
+- (void)enumeratePropertyKeysUsingBlock:(void (^)(NSString *))block untilSuperClass:(Class)superClass
 {
     unsigned int outCount, i;
-    for (Class cls = self.class; cls != superCls; cls = cls.superclass) {
+    for (Class cls = self.class; cls != superClass; cls = cls.superclass) {
         objc_property_t *properties = class_copyPropertyList(cls, &outCount);
         for (i = 0; i < outCount; i++) {
             NSString *key = [NSString stringWithUTF8String:property_getName(properties[i])];
@@ -91,14 +139,14 @@ static SEL property_getSetter(objc_property_t property)
     [self enumeratePropertyKeysAndValuesUsingBlock:block untilSuperClass:self.superclass];
 }
 
-- (void)enumeratePropertyKeysAndValuesUsingBlock:(void (^)(NSString *, id))block untilSuperClass:(Class)superCls
+- (void)enumeratePropertyKeysAndValuesUsingBlock:(void (^)(NSString *, id))block untilSuperClass:(Class)superClass
 {
     [self enumeratePropertyKeysUsingBlock:^(NSString *key) {
         if (block) {
             id value = [self valueForKey:key];
             block(key, value);
         }
-    } untilSuperClass:superCls];
+    } untilSuperClass:superClass];
 }
 
 - (Class)classForPropertyKey:(NSString *)key

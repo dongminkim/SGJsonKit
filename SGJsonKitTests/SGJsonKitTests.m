@@ -6,10 +6,13 @@
 //  Copyright (c) 2012 Shift Partners. All rights reserved.
 //
 
-#import "SGJsonKitTests.h"
+#import <XCTest/XCTest.h>
 #import "SGDemoRoot.h"
 #import "SGDemoMembers.h"
 #import "SGDemoMember.h"
+
+@interface SGJsonKitTests : XCTestCase
+@end
 
 @implementation SGJsonKitTests
 
@@ -44,6 +47,9 @@
     
     ((SGDemoMember*)demo.members[1]).lld = INT64_MAX;
     NSLog(@"demo 3: %@", demo);
+
+    NSDictionary *dict = demo.JSONObject;
+    NSLog(@"demo 4: %@", dict);
 
     XCTAssertTrue([demo.version isKindOfClass:[NSString class]], @"#1");
     XCTAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#2");

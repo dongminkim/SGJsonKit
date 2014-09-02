@@ -14,3 +14,5 @@
 #import "SGIntArray.h"
 #import "SGLongArray.h"
 #import "SGLongLongArray.h"
+
+#import "NSObject+SGJsonKit.h"

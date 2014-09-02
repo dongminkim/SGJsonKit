@@ -40,6 +40,11 @@
     return self;
 }
 
+- (NSNumber *)numberAtIndex:(NSUInteger)idx
+{
+    return [NSNumber numberWithBool:_values[idx]];
+}
+
 - (NSArray *)numberArray
 {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:_count];
