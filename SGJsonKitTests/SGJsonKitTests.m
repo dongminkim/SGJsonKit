@@ -50,6 +50,14 @@
 
     NSDictionary *dict = demo.JSONObject;
     NSLog(@"demo 4: %@", dict);
+    
+    [demo.members enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSLog(@"demo.member[%lu]: %@", idx, obj);
+    }];
+
+    [demo.topScores enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSLog(@"demo.topScores[%lu]: %@", idx, obj);
+    }];
 
     XCTAssertTrue([demo.version isKindOfClass:[NSString class]], @"#1");
     XCTAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#2");

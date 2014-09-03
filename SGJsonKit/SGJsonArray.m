@@ -82,6 +82,7 @@
 
 
 #pragma mark - NSCopying
+
 - (id)copyWithZone:(NSZone *)zone
 {
     SGJsonArray *copy = [[[self class] allocWithZone:zone] init];
@@ -91,6 +92,7 @@
 
 
 #pragma mark - NSArray
+
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
     return self.array;
@@ -125,6 +127,7 @@
 
 
 #pragma mark - NSMutableArray
+
 - (void)addObject:(id)anObject
 {
     Class itemClass = [[self class] classForArrayItem];
@@ -152,6 +155,7 @@
 
 
 #pragma mark - Objective-C Literal
+
 - (id)objectAtIndexedSubscript:(NSUInteger)idx
 {
     return [self.array objectAtIndexedSubscript:idx];
@@ -162,5 +166,22 @@
     [self.array setObject:obj atIndexedSubscript:idx];
 }
 
+
+#pragma mark - NSArray enumerate methods
+
+- (void)enumerateObjectsAtIndexes:(NSIndexSet *)indexSet options:(NSEnumerationOptions)opts usingBlock:(void (^)(id, NSUInteger, BOOL *))block
+{
+    [self.array enumerateObjectsAtIndexes:indexSet options:opts usingBlock:block];
+}
+
+- (void)enumerateObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(id, NSUInteger, BOOL *))block
+{
+    [self.array enumerateObjectsWithOptions:opts usingBlock:block];
+}
+
+- (void)enumerateObjectsUsingBlock:(void (^)(id, NSUInteger, BOOL *))block
+{
+    [self.array enumerateObjectsUsingBlock:block];
+}
 
 @end
