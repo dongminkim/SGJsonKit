@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SGJsonKit"
-  s.version      = "1.2.1"
+  s.version      = "1.2.2"
   s.license      = "MIT"
 
   s.summary      = "Auto-mapping json objects to Objective-C classes"
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "5.0"
   s.osx.deployment_target = "10.7"
 
-  s.source       = { :git => "https://github.com/dongminkim/SGJsonKit.git", :tag => "v1.2.1" }
+  s.source       = { :git => "https://github.com/dongminkim/SGJsonKit.git", :tag => "v1.2.2" }
   s.source_files  = "SGJsonKit/*.{h,m}", "SGJsonKit/NumberArray/*.{h,m}"
 
   s.requires_arc = true
