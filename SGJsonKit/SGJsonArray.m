@@ -75,23 +75,22 @@
     return arr;
 }
 
+- (void)checkClassOfArrayItem:(id)anObject
+{
+    Class itemClass = [[self class] classForArrayItem];
+    if (![anObject isKindOfClass:itemClass]) {
+        [NSException raise:NSInternalInconsistencyException
+                    format:@"%@ addObject: param is %@ NOT %@.", self, [anObject class], itemClass];
+    }
+}
+
 - (NSString *)description
 {
     return [NSObject describeArrayItems:self];
 }
 
 
-#pragma mark - NSCopying
-
-- (id)copyWithZone:(NSZone *)zone
-{
-    SGJsonArray *copy = [[[self class] allocWithZone:zone] init];
-    copy.array = self.array;
-    return copy;
-}
-
-
-#pragma mark - NSArray
+#pragma mark - Forwarding
 
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
@@ -105,9 +104,30 @@
     return [self.array isKindOfClass:aClass];
 }
 
+
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    SGJsonArray *copy = [[[self class] allocWithZone:zone] init];
+    copy.array = self.array;
+    return copy;
+}
+
+
+#pragma mark - NSFastEnumeration
+
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len
 {
     return [self.array countByEnumeratingWithState:state objects:buffer count:len];
+}
+
+
+#pragma mark - NSArray
+
+- (BOOL)containsObject:(id)anObject
+{
+    return [self.array containsObject:anObject];
 }
 
 - (NSUInteger)count
@@ -115,9 +135,29 @@
     return [self.array count];
 }
 
+- (void)getObjects:(id __unsafe_unretained [])objects range:(NSRange)range
+{
+    [self.array getObjects:objects range:range];
+}
+
+- (id)firstObject
+{
+    return [self.array firstObject];
+}
+
+- (id)lastObject
+{
+    return [self.array lastObject];
+}
+
 - (id)objectAtIndex:(NSUInteger)index
 {
     return [self.array objectAtIndex:index];
+}
+
+- (NSArray *)objectsAtIndexes:(NSIndexSet *)indexes
+{
+    return [self.array objectsAtIndexes:indexes];
 }
 
 - (NSUInteger)indexOfObject:(id)anObject
@@ -125,22 +165,44 @@
     return [self.array indexOfObject:anObject];
 }
 
+- (NSUInteger)indexOfObject:(id)anObject inRange:(NSRange)range
+{
+    return [self.array indexOfObject:anObject inRange:range];
+}
+
+- (NSUInteger)indexOfObjectIdenticalTo:(id)anObject
+{
+    return [self.array indexOfObjectIdenticalTo:anObject];
+}
+
+- (NSUInteger)indexOfObjectIdenticalTo:(id)anObject inRange:(NSRange)range
+{
+    return [self.array indexOfObjectIdenticalTo:anObject inRange:range];
+}
+
 
 #pragma mark - NSMutableArray
 
+- (void)insertObject:(id)anObject atIndex:(NSUInteger)index
+{
+    [self checkClassOfArrayItem:anObject];
+    [self.array insertObject:anObject atIndex:index];
+}
+
 - (void)addObject:(id)anObject
 {
-    Class itemClass = [[self class] classForArrayItem];
-    if (![anObject isKindOfClass:itemClass]) {
-        [NSException raise:NSInternalInconsistencyException
-                    format:@"%@ addObject: param is %@ NOT %@.", self, [anObject class], itemClass];
-    }
+    [self checkClassOfArrayItem:anObject];
     [self.array addObject:anObject];
 }
 
-- (void)removeObjectsInRange:(NSRange)aRange
+- (void)removeAllObjects
 {
-    [self.array removeObjectsInRange:aRange];
+    [self.array removeAllObjects];
+}
+
+- (void)removeLastObject
+{
+    [self.array removeLastObject];
 }
 
 - (void)removeObject:(id)anObject
@@ -148,9 +210,45 @@
     [self.array removeObject:anObject];
 }
 
-- (void)removeAllObjects
+- (void)removeObject:(id)anObject inRange:(NSRange)range
 {
-    [self.array removeAllObjects];
+    [self.array removeObject:anObject inRange:range];
+}
+
+- (void)removeObjectAtIndex:(NSUInteger)index
+{
+    [self.array removeObjectAtIndex:index];
+}
+
+- (void)removeObjectIdenticalTo:(id)anObject inRange:(NSRange)range
+{
+    [self.array removeObjectIdenticalTo:anObject inRange:range];
+}
+
+- (void)removeObjectIdenticalTo:(id)anObject
+{
+    [self.array removeObjectIdenticalTo:anObject];
+}
+
+- (void)removeObjectsAtIndexes:(NSIndexSet *)indexes
+{
+    [self.array removeObjectsAtIndexes:indexes];
+}
+
+- (void)removeObjectsInArray:(NSArray *)otherArray
+{
+    [self.array removeObjectsInArray:otherArray];
+}
+
+- (void)removeObjectsInRange:(NSRange)range
+{
+    [self.array removeObjectsInRange:range];
+}
+
+- (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject
+{
+    [self checkClassOfArrayItem:anObject];
+    [self.array replaceObjectAtIndex:index withObject:anObject];
 }
 
 

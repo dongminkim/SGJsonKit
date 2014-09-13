@@ -59,10 +59,12 @@
         NSLog(@"demo.topScores[%lu]: %@", idx, obj);
     }];
 
-    XCTAssertTrue([demo.version isKindOfClass:[NSString class]], @"#1");
-    XCTAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#2");
-    XCTAssertTrue(demo.title == nil, @"#3");
-    XCTAssertTrue(demo.desc == nil, @"#4");
+    XCTAssertTrue([demo.version isKindOfClass:[NSString class]], @"#1-1");
+    XCTAssertTrue([demo.version isEqualToString:@"1.0.0"], @"#1-2");
+    XCTAssertTrue(demo.title == nil, @"#2");
+    XCTAssertTrue(demo.desc == nil, @"#3");
+    XCTAssertTrue(demo.members[0] == demo.members.firstObject, @"#4-1");
+    XCTAssertTrue(demo.members[2] == demo.members.lastObject, @"#4-2");
     XCTAssertTrue([[demo.members[0] no] isEqualToNumber:[NSNumber numberWithInt:101]], @"#5-1");
     XCTAssertTrue([[demo.members[0] name] isEqualToString:@"Dongmin Kim"], @"#5-2");
     XCTAssertTrue([demo.members[0] lld] == 1234567890, @"#5-3");
