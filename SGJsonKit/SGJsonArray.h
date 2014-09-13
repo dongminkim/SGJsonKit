@@ -11,6 +11,9 @@
 
 + (Class)classForArrayItem;
 
+- (instancetype)initWithArray:(NSArray *)array;
+- (NSArray *)array;
+
 // NSArray methods
 - (BOOL)containsObject:(id)anObject;
 - (NSUInteger)count;
