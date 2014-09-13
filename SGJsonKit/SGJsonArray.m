@@ -21,7 +21,7 @@
     return nil;
 }
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self != nil) {
@@ -30,7 +30,7 @@
     return self;
 }
 
-- (id)initWithJSONObject:(id)jsonObject
+- (instancetype)initWithJSONObject:(id)jsonObject
 {
     NSArray *arr = (NSArray*)jsonObject;
     if (arr == nil) {

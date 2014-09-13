@@ -6,9 +6,9 @@
 
 @protocol SGJson
 @required
-- (id)initWithJSONObject:(id)jsonObject;
-- (id)initWithJSONTextData:(NSData*)jsonTextData;
-- (id)initWithJSONTextString:(NSString*)jsonTextString;
+- (instancetype)initWithJSONObject:(id)jsonObject;
+- (instancetype)initWithJSONTextData:(NSData*)jsonTextData;
+- (instancetype)initWithJSONTextString:(NSString*)jsonTextString;
 - (id)JSONObject;
 - (NSData*)JSONTextData;
 - (NSString*)JSONTextString;

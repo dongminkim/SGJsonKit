@@ -9,13 +9,13 @@
 
 @implementation SGJsonObject
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     return self;
 }
 
-- (id)initWithJSONObject:(id)jsonObject
+- (instancetype)initWithJSONObject:(id)jsonObject
 {
     NSDictionary *dic = (NSDictionary*)jsonObject;
     if (dic == nil) {
@@ -43,7 +43,7 @@
     return self;
 }
 
-- (id)initWithJSONTextData:(NSData*)jsonTextData
+- (instancetype)initWithJSONTextData:(NSData*)jsonTextData
 {
     NSError *error = nil;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonTextData options:NSJSONReadingAllowFragments error:&error];
@@ -53,7 +53,7 @@
     return [self initWithJSONObject:jsonObject];
 }
 
-- (id)initWithJSONTextString:(NSString*)jsonTextString
+- (instancetype)initWithJSONTextString:(NSString*)jsonTextString
 {
     NSData *data = [jsonTextString dataUsingEncoding:NSUTF8StringEncoding];
     return [self initWithJSONTextData:data];
