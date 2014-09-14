@@ -139,6 +139,28 @@
 }
 
 
+#pragma mark - KVC
+- (id)valueForKey:(NSString *)key
+{
+    return [self.realArray valueForKey:key];
+}
+
+- (id)valueForKeyPath:(NSString *)keyPath
+{
+    return [self.realArray valueForKeyPath:keyPath];
+}
+
+- (void)setValue:(id)value forKey:(NSString *)key
+{
+    [self.realArray setValue:value forKey:key];
+}
+
+- (void)setValue:(id)value forKeyPath:(NSString *)keyPath
+{
+    [self.realArray setValue:value forKeyPath:keyPath];
+}
+
+
 #pragma mark - NSArray
 
 - (BOOL)containsObject:(id)anObject

@@ -14,6 +14,12 @@
 - (instancetype)initWithArray:(NSArray *)array;
 - (NSArray *)array;
 
+// KVC
+- (id)valueForKey:(NSString *)key;
+- (id)valueForKeyPath:(NSString *)keyPath;
+- (void)setValue:(id)value forKey:(NSString *)key;
+- (void)setValue:(id)value forKeyPath:(NSString *)keyPath;
+
 // NSArray methods
 - (BOOL)containsObject:(id)anObject;
 - (NSUInteger)count;
