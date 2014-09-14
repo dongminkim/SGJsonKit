@@ -4,6 +4,8 @@
 //  http://github.com/dongminkim/SGJsonKit
 //
 
+#ifdef __OBJC__
+
 #import "SGJson.h"
 
 #import "SGNumberArray.h"
@@ -16,3 +18,5 @@
 #import "SGLongLongArray.h"
 
 #import "NSObject+SGJsonKit.h"
+
+#endif
